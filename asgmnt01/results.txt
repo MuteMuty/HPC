@@ -1,0 +1,301 @@
+Configuration: sequential_results/col_diff_grad_1892x1200.png.txt
+Average time: 2.15124
+Configuration: sequential_results/col_diff_grad_3712x2160.png.txt
+Average time: 28.1146
+Configuration: sequential_results/col_diff_grad_592x480.png.txt
+Average time: 1.43286
+Configuration: sequential_results/col_diff_grad_7552x4320.png.txt
+Average time: 112.177
+Configuration: sequential_results/col_diff_grad_896x768.png.txt
+Average time: 3.35978
+Configuration: sequential_results/sobel_1892x1200.png.txt
+Average time: 5.35351
+Configuration: sequential_results/sobel_3712x2160.png.txt
+Average time: 77.639
+Configuration: sequential_results/sobel_592x480.png.txt
+Average time: 3.60515
+Configuration: sequential_results/sobel_7552x4320.png.txt
+Average time: 312.353
+Configuration: sequential_results/sobel_896x768.png.txt
+Average time: 7.86012
+
+
+Configuration: parallel_results/cores16_threads1_1892x1200.png.txt
+Average time: 1.27622
+Configuration: parallel_results/cores16_threads1_3712x2160.png.txt
+Average time: 14.2
+Configuration: parallel_results/cores16_threads1_592x480.png.txt
+Average time: 0.980325
+Configuration: parallel_results/cores16_threads16_1892x1200.png.txt
+Average time: 11.6878
+Configuration: parallel_results/cores16_threads16_3712x2160.png.txt
+Average time: 83.7736
+Configuration: parallel_results/cores16_threads16_592x480.png.txt
+Average time: 19.6164
+Configuration: parallel_results/cores16_threads16_7552x4320.png.txt
+Average time: 283.085
+Configuration: parallel_results/cores16_threads16_896x768.png.txt
+Average time: 31.4279
+Configuration: parallel_results/cores16_threads1_7552x4320.png.txt
+Average time: 55.6068
+Configuration: parallel_results/cores16_threads1_896x768.png.txt
+Average time: 2.19219
+Configuration: parallel_results/cores16_threads2_1892x1200.png.txt
+Average time: 1.80763
+Configuration: parallel_results/cores16_threads2_3712x2160.png.txt
+Average time: 16.6765
+Configuration: parallel_results/cores16_threads2_592x480.png.txt
+Average time: 1.29524
+Configuration: parallel_results/cores16_threads2_7552x4320.png.txt
+Average time: 62.5512
+Configuration: parallel_results/cores16_threads2_896x768.png.txt
+Average time: 3.1317
+Configuration: parallel_results/cores16_threads32_1892x1200.png.txt
+Average time: 23.1986
+Configuration: parallel_results/cores16_threads32_3712x2160.png.txt
+Average time: 158.655
+Configuration: parallel_results/cores16_threads32_592x480.png.txt
+Average time: 31.9528
+Configuration: parallel_results/cores16_threads32_7552x4320.png.txt
+Average time: 398.55
+Configuration: parallel_results/cores16_threads32_896x768.png.txt
+Average time: 50.0935
+Configuration: parallel_results/cores16_threads4_1892x1200.png.txt
+Average time: 2.24608
+Configuration: parallel_results/cores16_threads4_3712x2160.png.txt
+Average time: 21.2154
+Configuration: parallel_results/cores16_threads4_592x480.png.txt
+Average time: 2.03191
+Configuration: parallel_results/cores16_threads4_7552x4320.png.txt
+Average time: 74.6844
+Configuration: parallel_results/cores16_threads4_896x768.png.txt
+Average time: 4.68498
+Configuration: parallel_results/cores16_threads8_1892x1200.png.txt
+Average time: 4.14914
+Configuration: parallel_results/cores16_threads8_3712x2160.png.txt
+Average time: 32.7851
+Configuration: parallel_results/cores16_threads8_592x480.png.txt
+Average time: 5.76383
+Configuration: parallel_results/cores16_threads8_7552x4320.png.txt
+Average time: 103.776
+Configuration: parallel_results/cores16_threads8_896x768.png.txt
+Average time: 10.3274
+Configuration: parallel_results/cores1_threads1_1892x1200.png.txt
+Average time: 1.13471
+Configuration: parallel_results/cores1_threads1_3712x2160.png.txt
+Average time: 17.8262
+Configuration: parallel_results/cores1_threads1_592x480.png.txt
+Average time: 0.717642
+Configuration: parallel_results/cores1_threads1_7552x4320.png.txt
+Average time: 74.6992
+Configuration: parallel_results/cores1_threads1_896x768.png.txt
+Average time: 1.88658
+Configuration: parallel_results/cores2_threads1_1892x1200.png.txt
+Average time: 1.14121
+Configuration: parallel_results/cores2_threads1_3712x2160.png.txt
+Average time: 14.3437
+Configuration: parallel_results/cores2_threads1_592x480.png.txt
+Average time: 0.918162
+Configuration: parallel_results/cores2_threads1_7552x4320.png.txt
+Average time: 56.2708
+Configuration: parallel_results/cores2_threads1_896x768.png.txt
+Average time: 1.96892
+Configuration: parallel_results/cores2_threads2_1892x1200.png.txt
+Average time: 1.89744
+Configuration: parallel_results/cores2_threads2_3712x2160.png.txt
+Average time: 25.8392
+Configuration: parallel_results/cores2_threads2_592x480.png.txt
+Average time: 1.37624
+Configuration: parallel_results/cores2_threads2_7552x4320.png.txt
+Average time: 102.918
+Configuration: parallel_results/cores2_threads2_896x768.png.txt
+Average time: 3.13281
+Configuration: parallel_results/cores2_threads4_1892x1200.png.txt
+Average time: 3.49451
+Configuration: parallel_results/cores2_threads4_3712x2160.png.txt
+Average time: 33.9539
+Configuration: parallel_results/cores2_threads4_592x480.png.txt
+Average time: 3.9347
+Configuration: parallel_results/cores2_threads4_7552x4320.png.txt
+Average time: 113.194
+Configuration: parallel_results/cores2_threads4_896x768.png.txt
+Average time: 6.55304
+Configuration: parallel_results/cores4_threads1_1892x1200.png.txt
+Average time: 1.20433
+Configuration: parallel_results/cores4_threads1_3712x2160.png.txt
+Average time: 14.4502
+Configuration: parallel_results/cores4_threads1_592x480.png.txt
+Average time: 0.989925
+Configuration: parallel_results/cores4_threads1_7552x4320.png.txt
+Average time: 56.0647
+Configuration: parallel_results/cores4_threads1_896x768.png.txt
+Average time: 2.23361
+Configuration: parallel_results/cores4_threads2_1892x1200.png.txt
+Average time: 1.79088
+Configuration: parallel_results/cores4_threads2_3712x2160.png.txt
+Average time: 17.4565
+Configuration: parallel_results/cores4_threads2_592x480.png.txt
+Average time: 1.70203
+Configuration: parallel_results/cores4_threads2_7552x4320.png.txt
+Average time: 64.9084
+Configuration: parallel_results/cores4_threads2_896x768.png.txt
+Average time: 3.30352
+Configuration: parallel_results/cores4_threads4_1892x1200.png.txt
+Average time: 2.46547
+Configuration: parallel_results/cores4_threads4_3712x2160.png.txt
+Average time: 32.4623
+Configuration: parallel_results/cores4_threads4_592x480.png.txt
+Average time: 2.05013
+Configuration: parallel_results/cores4_threads4_7552x4320.png.txt
+Average time: 135.996
+Configuration: parallel_results/cores4_threads4_896x768.png.txt
+Average time: 4.4565
+Configuration: parallel_results/cores4_threads8_1892x1200.png.txt
+Average time: 6.40966
+Configuration: parallel_results/cores4_threads8_3712x2160.png.txt
+Average time: 47.5725
+Configuration: parallel_results/cores4_threads8_592x480.png.txt
+Average time: 7.27162
+Configuration: parallel_results/cores4_threads8_7552x4320.png.txt
+Average time: 144.715
+Configuration: parallel_results/cores4_threads8_896x768.png.txt
+Average time: 11.8652
+Configuration: parallel_results/cores8_threads1_1892x1200.png.txt
+Average time: 1.35756
+Configuration: parallel_results/cores8_threads1_3712x2160.png.txt
+Average time: 14.3939
+Configuration: parallel_results/cores8_threads1_592x480.png.txt
+Average time: 0.990545
+Configuration: parallel_results/cores8_threads16_1892x1200.png.txt
+Average time: 11.8724
+Configuration: parallel_results/cores8_threads16_3712x2160.png.txt
+Average time: 85.7316
+Configuration: parallel_results/cores8_threads16_592x480.png.txt
+Average time: 15.595
+Configuration: parallel_results/cores8_threads16_7552x4320.png.txt
+Average time: 226.549
+Configuration: parallel_results/cores8_threads16_896x768.png.txt
+Average time: 25.981
+Configuration: parallel_results/cores8_threads1_7552x4320.png.txt
+Average time: 55.9917
+Configuration: parallel_results/cores8_threads1_896x768.png.txt
+Average time: 2.22911
+Configuration: parallel_results/cores8_threads2_1892x1200.png.txt
+Average time: 1.87866
+Configuration: parallel_results/cores8_threads2_3712x2160.png.txt
+Average time: 17.6262
+Configuration: parallel_results/cores8_threads2_592x480.png.txt
+Average time: 1.662
+Configuration: parallel_results/cores8_threads2_7552x4320.png.txt
+Average time: 64.8614
+Configuration: parallel_results/cores8_threads2_896x768.png.txt
+Average time: 3.37508
+Configuration: parallel_results/cores8_threads8_1892x1200.png.txt
+Average time: 4.05684
+Configuration: parallel_results/cores8_threads8_3712x2160.png.txt
+Average time: 47.6451
+Configuration: parallel_results/cores8_threads8_592x480.png.txt
+Average time: 4.94212
+Configuration: parallel_results/cores8_threads8_7552x4320.png.txt
+Average time: 182.104
+Configuration: parallel_results/cores8_threads8_896x768.png.txt
+Average time: 8.93209
+
+Cores, Threads, Image, Average Time (sec)
+1, 1, 592x480.png, 1.1676
+2, 2, 592x480.png, 1.4317
+4, 4, 592x480.png, 2.3540
+8, 8, 592x480.png, 3.8388
+
+1, 1, 896x768.png, 2.6451
+2, 2, 896x768.png, 3.6814
+4, 4, 896x768.png, 4.8575
+8, 8, 896x768.png, 6.5823
+
+1, 1, 1892x1200.png, 1.8802
+2, 2, 1892x1200.png, 2.4701
+4, 4, 1892x1200.png, 3.3123
+8, 8, 1892x1200.png, 4.8558
+
+1, 1, 3712x2160.png, 22.5862
+2, 2, 3712x2160.png, 24.4129
+4, 4, 3712x2160.png, 27.7430
+8, 8, 3712x2160.png, 49.8953
+
+1, 1, 7552x4320.png, 87.4532
+2, 2, 7552x4320.png, 111.2269
+4, 4, 7552x4320.png, 129.7322
+8, 8, 7552x4320.png, 331.7328
+
+Image Dimensions	1 Core, 1 Thread	2 Cores, 2 Threads	4 Cores, 4 Threads	8 Cores, 8 Threads	16 Cores, 16 Threads	16 Cores, 32 Threads
+592x480	0.717642	1.37624	2.05013	4.94212	19.6164	31.9528
+896x768	1.88658	3.13281	4.4565	8.93209	31.4279	50.0935
+1892x1200	1.13471	1.89744	2.46547	4.05684	11.6878	23.1986
+3712x2160	17.8262	25.8392	32.4623	47.6451	83.7736	158.655
+7552x4320	74.6992	102.918	135.996	182.104	283.085	398.55
+
+
+SEQUENTIAL
+Energy method, Image, Average time (sec)
+col_diff_grad, 592x480.png, 1.43286
+col_diff_grad, 896x768.png, 3.35978
+col_diff_grad, 1892x1200.png, 2.15124
+col_diff_grad, 3712x2160.png, 28.1146
+col_diff_grad, 7552x4320.png, 112.177
+sobel, 592x480.png, 3.60515
+sobel, 896x768.png, 7.86012
+sobel, 1892x1200.png, 5.35351
+sobel, 3712x2160.png, 77.639
+sobel, 7552x4320.png, 312.353
+
+PARALLEL
+Cores, Threads, Image, Average Time (sec)
+1, 1, 592x480.png, 1.1676
+2, 2, 592x480.png, 1.4725
+2, 4, 592x480.png, 3.4264
+4, 4, 592x480.png, 2.3107
+4, 8, 592x480.png, 7.5706
+8, 8, 592x480.png, 4.4007
+8, 16, 592x480.png, 16.3475
+16, 16, 592x480.png, 17.2177
+16, 32, 592x480.png, 31.7527
+
+1, 1, 896x768.png, 2.6451
+2, 2, 896x768.png, 3.7142
+2, 4, 896x768.png, 6.1634
+4, 4, 896x768.png, 4.7891
+4, 8, 896x768.png, 11.4943
+8, 8, 896x768.png, 7.1889
+8, 16, 896x768.png, 24.4658
+16, 16, 896x768.png, 21.6665
+16, 32, 896x768.png, 50.5372
+
+1, 1, 1892x1200.png, 1.8802
+2, 2, 1892x1200.png, 2.4914
+2, 4, 1892x1200.png, 3.3421
+4, 4, 1892x1200.png, 3.2545
+4, 8, 1892x1200.png, 6.2656
+8, 8, 1892x1200.png, 4.8731
+8, 16, 1892x1200.png, 11.9708
+16, 16, 1892x1200.png, 9.8984
+16, 32, 1892x1200.png, 22.4848
+
+1, 1, 3712x2160.png, 22.5862
+2, 2, 3712x2160.png, 23.3782
+2, 4, 3712x2160.png, 28.9299
+4, 4, 3712x2160.png, 27.4636
+4, 8, 3712x2160.png, 40.4124
+8, 8, 3712x2160.png, 49.3808
+8, 16, 3712x2160.png, 73.9904
+16, 16, 3712x2160.png, 75.7955
+16, 32, 3712x2160.png, 147.3959
+
+1, 1, 7552x4320.png, 87.4532
+2, 2, 7552x4320.png, 104.0044
+2, 4, 7552x4320.png, 99.2826
+4, 4, 7552x4320.png, 128.1177
+4, 8, 7552x4320.png, 140.6518
+8, 8, 7552x4320.png, 323.1582
+8, 16, 7552x4320.png, 214.0101
+16, 16, 7552x4320.png, 554.4951
+16, 32, 7552x4320.png, 446.4057

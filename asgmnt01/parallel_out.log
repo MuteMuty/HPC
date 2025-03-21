@@ -1,0 +1,21 @@
+Testing configuration: 16 cores, 16 threads
+Running with 16 cores and 16 threads...
+Testing configuration: 8 cores, 16 threads
+Running with 8 cores and 16 threads...
+Testing configuration: 16 cores, 32 threads
+Running with 16 cores and 32 threads...
+Testing configuration: 4 cores, 8 threads
+Running with 4 cores and 8 threads...
+Testing configuration: 2 cores, 4 threads
+Running with 2 cores and 4 threads...
+Testing configuration: 1 cores, 2 threads
+Running with 1 cores and 2 threads...
+slurmstepd: error: *** STEP 56518276.187 ON wn140 CANCELLED AT 2025-03-20T23:54:31 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 56518276 ON wn140 CANCELLED AT 2025-03-20T23:54:31 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 56518277.185 ON wn140 CANCELLED AT 2025-03-20T23:55:01 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 56518277 ON wn140 CANCELLED AT 2025-03-20T23:55:01 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 56518279 ON wn141 CANCELLED AT 2025-03-20T23:55:31 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 56518279.196 ON wn141 CANCELLED AT 2025-03-20T23:55:31 DUE TO TIME LIMIT ***
