@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include <time.h>
 #include <sys/stat.h>
 #include <omp.h>
+#include <time.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
@@ -12,201 +12,235 @@
 #include "stb_image_write.h"
 
 #define COLOR_CHANNELS 3
+#define BLOCK_WIDTH 64
+#define SEAM_BATCH 16
 
-// Function to compute energy using color difference gradient
-void compute_energy(const unsigned char *image, int width, int height, int *energy) {
-    #pragma omp parallel for collapse(2) schedule(guided)
-    for (int y = 0; y < height; y++) {
-        for (int x = 0; x < width; x++) {
-            const unsigned char *pixel = image + (y * width + x) * COLOR_CHANNELS;
+typedef struct {
+    int width;
+    int height;
+    unsigned char *data;
+} Image;
+
+// Triangular-blocked energy computation
+void compute_energy(const Image *img, int *energy) {
+    const int w = img->width;
+    const int h = img->height;
+    const unsigned char *image = img->data;
+
+    #pragma omp parallel for schedule(dynamic, 16)
+    for (int y = 0; y < h; y++) {
+        for (int x = 0; x < w; x++) {
+            int dx, dy;
             
-            // Calculate horizontal gradient
-            int left_x = (x > 0) ? x - 1 : x;
-            int right_x = (x < width - 1) ? x + 1 : x;
-            const unsigned char *left = image + (y * width + left_x) * COLOR_CHANNELS;
-            const unsigned char *right = image + (y * width + right_x) * COLOR_CHANNELS;
-            int dx = abs(left[0] - right[0]) + abs(left[1] - right[1]) + abs(left[2] - right[2]);
+            // Horizontal gradient
+            int left = (x > 0) ? x - 1 : x;
+            int right = (x < w-1) ? x + 1 : x;
+            const unsigned char *l = &image[(y*w + left)*COLOR_CHANNELS];
+            const unsigned char *r = &image[(y*w + right)*COLOR_CHANNELS];
+            dx = abs(l[0]-r[0]) + abs(l[1]-r[1]) + abs(l[2]-r[2]);
 
-            // Calculate vertical gradient
-            int top_y = (y > 0) ? y - 1 : y;
-            int bottom_y = (y < height - 1) ? y + 1 : y;
-            const unsigned char *top = image + (top_y * width + x) * COLOR_CHANNELS;
-            const unsigned char *bottom = image + (bottom_y * width + x) * COLOR_CHANNELS;
-            int dy = abs(top[0] - bottom[0]) + abs(top[1] - bottom[1]) + abs(top[2] - bottom[2]);
+            // Vertical gradient
+            int top = (y > 0) ? y - 1 : y;
+            int bottom = (y < h-1) ? y + 1 : y;
+            const unsigned char *t = &image[(top*w + x)*COLOR_CHANNELS];
+            const unsigned char *b = &image[(bottom*w + x)*COLOR_CHANNELS];
+            dy = abs(t[0]-b[0]) + abs(t[1]-b[1]) + abs(t[2]-b[2]);
 
-            energy[y * width + x] = dx + dy;
+            energy[y*w + x] = dx + dy;
         }
     }
 }
 
-// Function to find seams using dynamic programming with triangular-blocked approach
-void find_seam_triangular(const int *energy, int width, int height, int *seam) {
-    int *dp = (int *)malloc(width * height * sizeof(int));
-    int *traceback = (int *)malloc(width * height * sizeof(int));
+// Triangular-blocked DP for cumulative energy
+void find_seams(const int *energy, int width, int height, int *seams, int num_seams) {
+    int *dp = (int *)aligned_alloc(64, width*height*sizeof(int));
+    int *traceback = (int *)aligned_alloc(64, width*height*sizeof(int));
 
     // Initialize first row
-    memcpy(dp, energy, width * sizeof(int));
+    memcpy(dp, energy, width*sizeof(int));
 
-    // Triangular-blocked dynamic programming
+    // Process in triangular blocks
     for (int y = 1; y < height; y++) {
-        #pragma omp parallel for schedule(static)
-        for (int x = 0; x < width; x++) {
-            int min_energy = dp[(y-1)*width + x];
-            int min_x = x;
+        // Phase 1: Downward triangles
+        #pragma omp parallel for schedule(dynamic, BLOCK_WIDTH)
+        for (int bx = 0; bx < width; bx += BLOCK_WIDTH) {
+            int start = bx;
+            int end = (bx + BLOCK_WIDTH) < width ? bx + BLOCK_WIDTH : width;
+            
+            for (int x = start; x < end; x++) {
+                int min_energy = dp[(y-1)*width + x];
+                int min_x = x;
 
-            if(x > 0 && dp[(y-1)*width + (x-1)] < min_energy) {
-                min_energy = dp[(y-1)*width + (x-1)];
-                min_x = x - 1;
-            }
-            if(x < width-1 && dp[(y-1)*width + (x+1)] < min_energy) {
-                min_energy = dp[(y-1)*width + (x+1)];
-                min_x = x + 1;
-            }
+                if(x > 0 && dp[(y-1)*width + (x-1)] < min_energy) {
+                    min_energy = dp[(y-1)*width + (x-1)];
+                    min_x = x - 1;
+                }
+                if(x < width-1 && dp[(y-1)*width + (x+1)] < min_energy) {
+                    min_energy = dp[(y-1)*width + (x+1)];
+                    min_x = x + 1;
+                }
 
-            dp[y*width + x] = energy[y*width + x] + min_energy;
-            traceback[y*width + x] = min_x;
+                dp[y*width + x] = energy[y*width + x] + min_energy;
+                traceback[y*width + x] = min_x;
+            }
+        }
+
+        // Phase 2: Upward triangles (dependency resolution)
+        #pragma omp parallel for schedule(dynamic, BLOCK_WIDTH)
+        for (int bx = BLOCK_WIDTH/2; bx < width; bx += BLOCK_WIDTH) {
+            int start = bx;
+            int end = (bx + BLOCK_WIDTH) < width ? bx + BLOCK_WIDTH : width;
+            
+            for (int x = start; x < end; x++) {
+                if(x > 0 && dp[y*width + (x-1)] + energy[y*width + x] < dp[y*width + x]) {
+                    dp[y*width + x] = dp[y*width + (x-1)] + energy[y*width + x];
+                    traceback[y*width + x] = x - 1;
+                }
+                if(x < width-1 && dp[y*width + (x+1)] + energy[y*width + x] < dp[y*width + x]) {
+                    dp[y*width + x] = dp[y*width + (x+1)] + energy[y*width + x];
+                    traceback[y*width + x] = x + 1;
+                }
+            }
         }
     }
 
-    // Find minimum in last row with reduction
-    int min_index = 0;
-    int min_value = dp[(height-1)*width];
-    #pragma omp parallel for reduction(min:min_value)
-    for (int x = 1; x < width; x++) {
-        if(dp[(height-1)*width + x] < min_value) {
-            min_value = dp[(height-1)*width + x];
-            min_index = x;
-        }
-    }
+    // Find multiple seams using parallel reduction
+    #pragma omp parallel
+    {
+        #pragma omp for schedule(dynamic, SEAM_BATCH)
+        for (int s = 0; s < num_seams; s++) {
+            int min_idx = 0;
+            int min_val = dp[(height-1)*width];
+            
+            // Find local minimum in last row
+            for (int x = 1; x < width; x++) {
+                if(dp[(height-1)*width + x] < min_val) {
+                    min_val = dp[(height-1)*width + x];
+                    min_idx = x;
+                }
+            }
 
-    // Traceback (sequential)
-    seam[height-1] = min_index;
-    for (int y = height-2; y >= 0; y--) {
-        seam[y] = traceback[(y+1)*width + seam[y+1]];
+            // Traceback
+            seams[s*height + height-1] = min_idx;
+            for (int y = height-2; y >= 0; y--) {
+                seams[s*height + y] = traceback[(y+1)*width + seams[s*height + y+1]];
+            }
+        }
     }
 
     free(dp);
     free(traceback);
 }
 
-// Function to remove multiple seams in parallel (greedy approach)
-unsigned char *remove_multiple_seams(const unsigned char *image, int width, int height, const int *seams, int num_seams) {
-    int new_width = width - num_seams;
-    unsigned char *new_image = (unsigned char *)malloc(new_width * height * COLOR_CHANNELS);
+// Comparison function for sorting seams
+int compare_desc(const void *a, const void *b) {
+    return (*(int*)b - *(int*)a);
+}
 
+// Parallel seam removal with correct ordering
+Image remove_seams(Image img, const int *seams, int num_seams) {
+    int new_width = img.width - num_seams;
+    unsigned char *new_data = (unsigned char *)aligned_alloc(64, new_width * img.height * COLOR_CHANNELS);
+    
     #pragma omp parallel for schedule(static)
-    for (int y = 0; y < height; y++) {
-        const unsigned char *src_row = image + y * width * COLOR_CHANNELS;
-        unsigned char *dst_row = new_image + y * new_width * COLOR_CHANNELS;
+    for (int y = 0; y < img.height; y++) {
+        int *row_seams = (int *)alloca(num_seams * sizeof(int));
+        for (int s = 0; s < num_seams; s++) {
+            row_seams[s] = seams[s * img.height + y];
+        }
+        qsort(row_seams, num_seams, sizeof(int), compare_desc);
 
-        int dst_x = 0;
-        for (int x = 0; x < width; x++) {
-            int is_seam = 0;
-            for (int s = 0; s < num_seams; s++) {
-                if (seams[s * height + y] == x) {
-                    is_seam = 1;
-                    break;
-                }
+        int src_idx = 0;
+        int dst_idx = 0;
+        for (int s = 0; s < num_seams; s++) {
+            // Copy pixels before seam
+            while(src_idx < row_seams[s]) {
+                memcpy(&new_data[(y * new_width + dst_idx) * COLOR_CHANNELS],
+                       &img.data[(y * img.width + src_idx) * COLOR_CHANNELS],
+                       COLOR_CHANNELS);
+                dst_idx++;
+                src_idx++;
             }
-            if (!is_seam) {
-                memcpy(dst_row + dst_x * COLOR_CHANNELS, src_row + x * COLOR_CHANNELS, COLOR_CHANNELS);
-                dst_x++;
-            }
+            // Skip the seam pixel
+            src_idx++;
+        }
+        // Copy remaining pixels
+        while(src_idx < img.width) {
+            memcpy(&new_data[(y * new_width + dst_idx) * COLOR_CHANNELS],
+                   &img.data[(y * img.width + src_idx) * COLOR_CHANNELS],
+                   COLOR_CHANNELS);
+            dst_idx++;
+            src_idx++;
         }
     }
 
-    return new_image;
+    free(img.data);
+    return (Image){new_width, img.height, new_data};
 }
 
-// Function to log execution time
 void log_execution_time(const char *filename, double elapsed_time) {
-    struct stat st = {0};
-    if (stat("parallel_results", &st) == -1) {
-        mkdir("parallel_results", 0700);
-    }
-
-    // Get the number of threads and cores
     int num_threads = omp_get_max_threads();
     int num_cores = omp_get_num_procs();
 
-    char filepath[256];
-    snprintf(filepath, sizeof(filepath), "parallel_results/cores%d_threads%d_%s.txt", num_cores, num_threads, filename);
-
-    FILE *file = fopen(filepath, "a");
+    FILE *file = fopen("bonus_results/execution_times.txt", "a");
     if (file) {
-        fprintf(file, "%.4f\n", elapsed_time);
+        fprintf(file, "Cores: %d, Threads: %d, Image: %s, Time: %.4f sec\n", num_cores, num_threads, filename, elapsed_time);
         fclose(file);
-    } else {
-        fprintf(stderr, "Error: Could not write to %s\n", filepath);
     }
 }
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {
-        fprintf(stderr, "USAGE: %s input_image output_image\n", argv[0]);
-        return EXIT_FAILURE;
+        fprintf(stderr, "Usage: %s input output\n", argv[0]);
+        return 1;
     }
 
+    // Load image
     int width, height, channels;
-    unsigned char *image = stbi_load(argv[1], &width, &height, &channels, COLOR_CHANNELS);
-    if (!image) {
-        fprintf(stderr, "Error: Could not load image %s\n", argv[1]);
-        return EXIT_FAILURE;
-    }
+    unsigned char *data = stbi_load(argv[1], &width, &height, &channels, COLOR_CHANNELS);
+    Image img = {width, height, data};
 
+    // Parse target size
     int target_width, target_height;
     if (sscanf(argv[2], "%dx%d", &target_width, &target_height) != 2 || target_height != height) {
-        fprintf(stderr, "Error: Output filename must specify widthxheight (e.g., 1800x1080.png)\n");
-        stbi_image_free(image);
-        return EXIT_FAILURE;
+        fprintf(stderr, "Invalid output format\n");
+        return 1;
     }
 
-    int num_seams = width - target_width;
-    if (num_seams <= 0) {
-        fprintf(stderr, "Error: Target width must be smaller than input width\n");
-        stbi_image_free(image);
-        return EXIT_FAILURE;
+    const int num_seams = width - target_width;
+    int *seams = (int *)aligned_alloc(64, num_seams*height*sizeof(int));
+
+    double start_time = omp_get_wtime();
+
+    // Process in batches for better cache utilization
+    for (int processed = 0; processed < num_seams; processed += SEAM_BATCH) {
+        int batch_size = (num_seams - processed) > SEAM_BATCH 
+                    ? SEAM_BATCH : (num_seams - processed);
+        
+        int *energy = (int*)aligned_alloc(64, img.width*img.height*sizeof(int));
+        compute_energy(&img, energy);
+        
+        int *current_seams = (int*)aligned_alloc(64, batch_size*img.height*sizeof(int));
+        find_seams(energy, img.width, img.height, current_seams, batch_size);
+        
+        Image new_img = remove_seams(img, current_seams, batch_size);
+        
+        // Update image reference AFTER successful removal
+        free(energy);
+        free(current_seams);
+        img = new_img;  // Old data freed inside remove_seams
     }
 
-    clock_t start_time = clock();
-
-    // Preallocate reusable buffers
-    int *energy = (int *)malloc(width * height * sizeof(int));
-    int *seams = (int *)malloc(num_seams * height * sizeof(int));
-    unsigned char *current_image = (unsigned char *)malloc(width * height * COLOR_CHANNELS);
-    memcpy(current_image, image, width * height * COLOR_CHANNELS);
-
-    int current_width = width;
-    for (int i = 0; i < num_seams; i++) {
-        compute_energy(current_image, current_width, height, energy);
-        find_seam_triangular(energy, current_width, height, seams + i * height);
-
-        unsigned char *temp_image = remove_multiple_seams(current_image, current_width, height, seams, i + 1);
-        free(current_image);
-        current_image = temp_image;
-        current_width--;
-    }
-
-    clock_t end_time = clock();
-    double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
-
+    double end_time = omp_get_wtime();
+    double elapsed_time = end_time - start_time;
     log_execution_time(argv[2], elapsed_time);
 
-    // Ensure output directory exists
-    struct stat st = {0};
-    if (stat("parallel_results", &st) == -1) {
-        mkdir("parallel_results", 0700);
-    }
-
+    // Save result
     char output_path[256];
-    snprintf(output_path, sizeof(output_path), "parallel_results/%s", argv[2]);
+    snprintf(output_path, sizeof(output_path), "bonus_results/%s", argv[2]);
+    stbi_write_png(output_path, img.width, img.height, COLOR_CHANNELS, img.data, img.width*COLOR_CHANNELS);
 
-    stbi_write_png(output_path, current_width, height, COLOR_CHANNELS, current_image, current_width * COLOR_CHANNELS);
-
-    stbi_image_free(image);
-    free(current_image);
-    free(energy);
     free(seams);
-
+    free(img.data);
     return 0;
 }

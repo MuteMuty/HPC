@@ -1,0 +1,280 @@
+---- Testing with 1 cores/threads ----
+Processing test_images/720x480.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/7680x4320.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/3840x2160.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/1024x768.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/1920x1200.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+---- Testing with 2 cores/threads ----
+Processing test_images/720x480.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/7680x4320.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/3840x2160.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/1024x768.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/1920x1200.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+---- Testing with 4 cores/threads ----
+Processing test_images/720x480.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/7680x4320.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/3840x2160.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/1024x768.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+Processing test_images/1920x1200.png (128 seams)
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+
+libgomp: Invalid value for environment variable OMP_PLACES
+---- Testing with 8 cores/threads ----
+Processing test_images/720x480.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+Processing test_images/7680x4320.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+Processing test_images/3840x2160.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+Processing test_images/1024x768.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+Processing test_images/1920x1200.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (8 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+---- Testing with 16 cores/threads ----
+Processing test_images/720x480.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+Processing test_images/7680x4320.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+Processing test_images/3840x2160.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+Processing test_images/1024x768.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+Processing test_images/1920x1200.png (128 seams)
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted
+srun: Job step's --cpus-per-task value exceeds that of job (16 > 4). Job step may never run.
+srun: error: Unable to create step for job 56548913: More processors requested than permitted

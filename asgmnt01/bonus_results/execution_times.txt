@@ -1,0 +1,128 @@
+Cores: 2, Threads: 1, Image: 7552x4320.png, Time: 4.0619 sec
+Cores: 2, Threads: 1, Image: 7552x4320.png, Time: 3.6261 sec
+Cores: 2, Threads: 1, Image: 7552x4320.png, Time: 3.5919 sec
+Cores: 2, Threads: 1, Image: 7552x4320.png, Time: 4.1479 sec
+Cores: 2, Threads: 1, Image: 7552x4320.png, Time: 3.5926 sec
+Cores: 2, Threads: 1, Image: 3712x2160.png, Time: 0.8531 sec
+Cores: 2, Threads: 1, Image: 3712x2160.png, Time: 0.8818 sec
+Cores: 2, Threads: 1, Image: 3712x2160.png, Time: 0.8718 sec
+Cores: 2, Threads: 1, Image: 3712x2160.png, Time: 1.1205 sec
+Cores: 2, Threads: 1, Image: 3712x2160.png, Time: 1.3836 sec
+Cores: 2, Threads: 1, Image: 896x768.png, Time: 0.1872 sec
+Cores: 2, Threads: 1, Image: 896x768.png, Time: 0.1866 sec
+Cores: 2, Threads: 1, Image: 896x768.png, Time: 0.1864 sec
+Cores: 2, Threads: 1, Image: 896x768.png, Time: 0.1860 sec
+Cores: 2, Threads: 1, Image: 896x768.png, Time: 0.1866 sec
+Cores: 2, Threads: 1, Image: 1892x1200.png, Time: 0.1242 sec
+Cores: 2, Threads: 1, Image: 1892x1200.png, Time: 0.1210 sec
+Cores: 2, Threads: 1, Image: 1892x1200.png, Time: 0.1218 sec
+Cores: 2, Threads: 1, Image: 1892x1200.png, Time: 0.1251 sec
+Cores: 2, Threads: 1, Image: 1892x1200.png, Time: 0.1258 sec
+Cores: 2, Threads: 2, Image: 7552x4320.png, Time: 3.5098 sec
+Cores: 2, Threads: 2, Image: 7552x4320.png, Time: 3.3854 sec
+Cores: 2, Threads: 2, Image: 7552x4320.png, Time: 3.1120 sec
+Cores: 2, Threads: 2, Image: 7552x4320.png, Time: 3.1233 sec
+Cores: 2, Threads: 2, Image: 7552x4320.png, Time: 3.2730 sec
+Cores: 2, Threads: 2, Image: 3712x2160.png, Time: 1.4802 sec
+Cores: 2, Threads: 2, Image: 3712x2160.png, Time: 1.1149 sec
+Cores: 2, Threads: 2, Image: 3712x2160.png, Time: 1.4684 sec
+Cores: 2, Threads: 2, Image: 3712x2160.png, Time: 1.4208 sec
+Cores: 2, Threads: 2, Image: 3712x2160.png, Time: 1.3248 sec
+Cores: 2, Threads: 2, Image: 896x768.png, Time: 0.1935 sec
+Cores: 2, Threads: 2, Image: 896x768.png, Time: 0.1923 sec
+Cores: 2, Threads: 2, Image: 896x768.png, Time: 0.1935 sec
+Cores: 2, Threads: 2, Image: 896x768.png, Time: 0.1936 sec
+Cores: 2, Threads: 2, Image: 896x768.png, Time: 0.1908 sec
+Cores: 2, Threads: 2, Image: 1892x1200.png, Time: 0.1308 sec
+Cores: 2, Threads: 2, Image: 1892x1200.png, Time: 0.1320 sec
+Cores: 2, Threads: 2, Image: 1892x1200.png, Time: 0.1282 sec
+Cores: 2, Threads: 2, Image: 1892x1200.png, Time: 0.1295 sec
+Cores: 2, Threads: 2, Image: 1892x1200.png, Time: 0.1308 sec
+Cores: 4, Threads: 4, Image: 7552x4320.png, Time: 2.9949 sec
+Cores: 4, Threads: 4, Image: 7552x4320.png, Time: 2.8994 sec
+Cores: 4, Threads: 4, Image: 7552x4320.png, Time: 2.9009 sec
+Cores: 4, Threads: 4, Image: 7552x4320.png, Time: 2.9329 sec
+Cores: 4, Threads: 4, Image: 7552x4320.png, Time: 2.9573 sec
+Cores: 4, Threads: 4, Image: 3712x2160.png, Time: 1.2617 sec
+Cores: 4, Threads: 4, Image: 3712x2160.png, Time: 1.3406 sec
+Cores: 4, Threads: 4, Image: 3712x2160.png, Time: 1.3007 sec
+Cores: 4, Threads: 4, Image: 3712x2160.png, Time: 1.3209 sec
+Cores: 4, Threads: 4, Image: 3712x2160.png, Time: 1.2987 sec
+Cores: 4, Threads: 4, Image: 896x768.png, Time: 0.1738 sec
+Cores: 4, Threads: 4, Image: 896x768.png, Time: 0.1708 sec
+Cores: 4, Threads: 4, Image: 896x768.png, Time: 0.1740 sec
+Cores: 4, Threads: 4, Image: 896x768.png, Time: 0.1729 sec
+Cores: 4, Threads: 4, Image: 896x768.png, Time: 0.1717 sec
+Cores: 4, Threads: 4, Image: 1892x1200.png, Time: 0.1174 sec
+Cores: 4, Threads: 4, Image: 1892x1200.png, Time: 0.1122 sec
+Cores: 4, Threads: 4, Image: 1892x1200.png, Time: 0.1092 sec
+Cores: 4, Threads: 4, Image: 1892x1200.png, Time: 0.1116 sec
+Cores: 4, Threads: 4, Image: 1892x1200.png, Time: 0.1105 sec
+Cores: 8, Threads: 8, Image: 7552x4320.png, Time: 2.9478 sec
+Cores: 8, Threads: 8, Image: 7552x4320.png, Time: 2.9124 sec
+Cores: 8, Threads: 8, Image: 7552x4320.png, Time: 2.9084 sec
+Cores: 8, Threads: 8, Image: 7552x4320.png, Time: 2.8936 sec
+Cores: 8, Threads: 8, Image: 7552x4320.png, Time: 2.9136 sec
+Cores: 8, Threads: 8, Image: 3712x2160.png, Time: 1.2955 sec
+Cores: 8, Threads: 8, Image: 3712x2160.png, Time: 1.2896 sec
+Cores: 8, Threads: 8, Image: 3712x2160.png, Time: 1.3258 sec
+Cores: 8, Threads: 8, Image: 3712x2160.png, Time: 1.2663 sec
+Cores: 8, Threads: 8, Image: 3712x2160.png, Time: 1.3006 sec
+Cores: 8, Threads: 8, Image: 896x768.png, Time: 0.1998 sec
+Cores: 8, Threads: 8, Image: 896x768.png, Time: 0.2034 sec
+Cores: 8, Threads: 8, Image: 896x768.png, Time: 0.2000 sec
+Cores: 8, Threads: 8, Image: 896x768.png, Time: 0.2060 sec
+Cores: 8, Threads: 8, Image: 896x768.png, Time: 0.2010 sec
+Cores: 8, Threads: 8, Image: 1892x1200.png, Time: 0.1184 sec
+Cores: 8, Threads: 8, Image: 1892x1200.png, Time: 0.1198 sec
+Cores: 8, Threads: 8, Image: 1892x1200.png, Time: 0.1179 sec
+Cores: 8, Threads: 8, Image: 1892x1200.png, Time: 0.1166 sec
+Cores: 8, Threads: 8, Image: 1892x1200.png, Time: 0.1188 sec
+Cores: 16, Threads: 16, Image: 7552x4320.png, Time: 3.0788 sec
+Cores: 16, Threads: 16, Image: 7552x4320.png, Time: 2.9423 sec
+Cores: 16, Threads: 16, Image: 7552x4320.png, Time: 2.9318 sec
+Cores: 16, Threads: 16, Image: 7552x4320.png, Time: 3.0886 sec
+Cores: 16, Threads: 16, Image: 7552x4320.png, Time: 3.0547 sec
+Cores: 16, Threads: 16, Image: 3712x2160.png, Time: 1.3464 sec
+Cores: 16, Threads: 16, Image: 3712x2160.png, Time: 1.3296 sec
+Cores: 16, Threads: 16, Image: 3712x2160.png, Time: 1.4006 sec
+Cores: 16, Threads: 16, Image: 3712x2160.png, Time: 1.3788 sec
+Cores: 16, Threads: 16, Image: 3712x2160.png, Time: 1.3571 sec
+Cores: 16, Threads: 16, Image: 896x768.png, Time: 0.2541 sec
+Cores: 16, Threads: 16, Image: 896x768.png, Time: 0.2528 sec
+Cores: 16, Threads: 16, Image: 896x768.png, Time: 0.2567 sec
+Cores: 16, Threads: 16, Image: 896x768.png, Time: 0.2491 sec
+Cores: 16, Threads: 16, Image: 896x768.png, Time: 0.2536 sec
+Cores: 16, Threads: 16, Image: 1892x1200.png, Time: 0.1311 sec
+Cores: 16, Threads: 16, Image: 1892x1200.png, Time: 0.1341 sec
+Cores: 16, Threads: 16, Image: 1892x1200.png, Time: 0.1335 sec
+Cores: 16, Threads: 16, Image: 1892x1200.png, Time: 0.1390 sec
+Cores: 16, Threads: 16, Image: 1892x1200.png, Time: 0.1336 sec
+
+Average Execution Times:
+Cores      Threads    Image           Avg Time (sec)
+==================================================
+2          1          896x768.png     0.1866
+2          1          1892x1200.png   0.1236
+2          1          3712x2160.png   1.0222
+2          1          7552x4320.png   3.8041
+
+2          2          896x768.png     0.1927
+2          2          1892x1200.png   0.1303
+2          2          3712x2160.png   1.3618
+2          2          7552x4320.png   3.2807
+
+4          4          896x768.png     0.1726
+4          4          1892x1200.png   0.1122
+4          4          3712x2160.png   1.3045
+4          4          7552x4320.png   2.9371
+
+8          8          896x768.png     0.2020
+8          8          1892x1200.png   0.1183
+8          8          3712x2160.png   1.2956
+8          8          7552x4320.png   2.9152
+
+16         16         896x768.png     0.2533
+16         16         1892x1200.png   0.1343
+16         16         3712x2160.png   1.3625
+16         16         7552x4320.png   3.0192

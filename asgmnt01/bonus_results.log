@@ -1,0 +1,18 @@
+---- Testing with 1 cores/threads ----
+Processing test_images/720x480.png (128 seams)
+malloc(): largebin double linked list corrupted (bk)
+srun: error: wn140: task 0: Aborted (core dumped)
+malloc(): largebin double linked list corrupted (bk)
+srun: error: wn140: task 0: Aborted (core dumped)
+malloc(): largebin double linked list corrupted (bk)
+srun: error: wn140: task 0: Aborted (core dumped)
+malloc(): largebin double linked list corrupted (bk)
+srun: error: wn140: task 0: Aborted (core dumped)
+malloc(): largebin double linked list corrupted (bk)
+srun: error: wn140: task 0: Aborted (core dumped)
+Processing test_images/7680x4320.png (128 seams)
+malloc(): corrupted top size
+srun: error: wn140: task 0: Aborted (core dumped)
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 56550636 ON wn140 CANCELLED AT 2025-03-22T19:32:49 ***
+slurmstepd: error: *** STEP 56550636.6 ON wn140 CANCELLED AT 2025-03-22T19:32:54 ***
