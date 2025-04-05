@@ -1,0 +1,77 @@
+DIMS 1920 1200 TIME 7.190
+DIMS 1920 1200 TIME 6.504
+DIMS 1920 1200 TIME 20.541
+DIMS 1920 1200 TIME 532.863
+DIMS 1920 1200 TIME 13.069
+DIMS 1920 1200 TIME 650.747
+DIMS 1920 1200 TIME 8.779
+DIMS 1920 1200 TIME 5.692
+DIMS 1920 1200 TIME 630.466
+DIMS 1920 1200 TIME 3.943
+DIMS 1920 1200 TIME 724.027
+DIMS 1920 1200 TIME 25.216
+DIMS 1920 1200 TIME 624.705
+DIMS 1920 1200 TIME 41.482
+DIMS 1920 1200 TIME 6.163
+DIMS 1920 1200 TIME 526.205
+DIMS 1920 1200 TIME 5.340
+DIMS 1920 1200 TIME 20.987
+DIMS 1920 1200 TIME 599.624
+DIMS 1920 1200 TIME 7.190
+DIMS 1920 1200 TIME 5.711
+DIMS 1920 1200 TIME 16.909
+DIMS 1920 1200 TIME 20.713
+DIMS 1920 1200 TIME 438.649
+DIMS 1920 1200 TIME 16.578
+DIMS 1920 1200 TIME 31.981
+DIMS 1920 1200 TIME 12.472
+DIMS 1920 1200 TIME 13.382
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /d/hpc/home/ep6791/hpc/asgmnt02/./cuda_histeq: No such file or directory
+srun: error: wn223: task 0: Exited with exit code 2
+DIMS 1920 1200 TIME 19.473
+DIMS 1920 1200 TIME 217.849
+DIMS 1920 1200 TIME 28.163
+DIMS 1920 1200 TIME 27.535
+DIMS 1920 1200 TIME 336.339
+DIMS 1920 1200 TIME 17.274
+DIMS 1920 1200 TIME 8.183
+DIMS 1920 1200 TIME 437.165
+DIMS 1920 1200 TIME 7.403
+DIMS 1920 1200 TIME 15.628
+DIMS 1920 1200 TIME 247.425
+DIMS 1920 1200 TIME 556.092
+DIMS 1920 1200 TIME 29.212
+DIMS 1920 1200 TIME 9.566
+DIMS 1920 1200 TIME 25.431
+DIMS 1920 1200 TIME 58.585
+DIMS 1920 1200 TIME 300.553
+DIMS 1920 1200 TIME 838.023
+DIMS 1920 1200 TIME 789.008
+DIMS 1920 1200 TIME 361.993
+DIMS 1920 1200 TIME 661.436
