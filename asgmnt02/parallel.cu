@@ -9,21 +9,22 @@
 #include "stb_image.h"
 #include "stb_image_write.h"
 
+// Dummy kernel for warm-up
+__global__ void dummy_kernel() {
+    // Empty kernel to warm up the GPU
+}
+
 // Kernel to convert RGB to YUV
-__global__ void rgb_to_yuv_kernel(unsigned char *d_image, unsigned char *d_Y, float *d_U, float *d_V, int width, int height, int channels) {
+__global__ void rgb_to_yuv_kernel(unsigned char *d_image, unsigned char *d_Y, float *d_U, float *d_V,
+                                  int width, int height, int channels) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     if (i >= width * height) return;
-
     int idx = i * channels;
     unsigned char R = d_image[idx];
     unsigned char G = d_image[idx + 1];
     unsigned char B = d_image[idx + 2];
-
-    // Compute Y (luminance)
     float Y_f = 0.299f * R + 0.587f * G + 0.114f * B;
     d_Y[i] = static_cast<unsigned char>(Y_f + 0.5f);
-
-    // Compute U and V (chrominance)
     d_U[i] = (-0.168736f * R) + (-0.331264f * G) + (0.5f * B) + 128.0f;
     d_V[i] = (0.5f * R) + (-0.418688f * G) + (-0.081312f * B) + 128.0f;
 }
@@ -32,7 +33,6 @@ __global__ void rgb_to_yuv_kernel(unsigned char *d_image, unsigned char *d_Y, fl
 __global__ void compute_histogram_kernel(unsigned char *d_Y, int *d_histogram, int size) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     if (i >= size) return;
-
     unsigned char y_val = d_Y[i];
     atomicAdd(&d_histogram[y_val], 1);
 }
@@ -64,10 +64,8 @@ __global__ void find_min_cdf_kernel(int *d_cdf, int *d_min_cdf) {
 __global__ void compute_LUT_kernel(unsigned char *d_LUT, int *d_cdf, int *d_min_cdf, int total_pixels) {
     int l = threadIdx.x;
     if (l >= 256) return;
-
     int cdf_val = d_cdf[l];
     int min_cdf = *d_min_cdf;
-
     if (cdf_val == 0) {
         d_LUT[l] = 0;
     } else {
@@ -88,28 +86,24 @@ __global__ void compute_LUT_kernel(unsigned char *d_LUT, int *d_cdf, int *d_min_
 __global__ void apply_LUT_kernel(unsigned char *d_Y, unsigned char *d_LUT, int size) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     if (i >= size) return;
-
     unsigned char y_val = d_Y[i];
     d_Y[i] = d_LUT[y_val];
 }
 
 // Kernel to convert YUV back to RGB
-__global__ void yuv_to_rgb_kernel(unsigned char *d_image, unsigned char *d_Y, float *d_U, float *d_V, int width, int height, int channels) {
+__global__ void yuv_to_rgb_kernel(unsigned char *d_image, unsigned char *d_Y, float *d_U, float *d_V,
+                                  int width, int height, int channels) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     if (i >= width * height) return;
-
     unsigned char Y_val = d_Y[i];
     float U_val = d_U[i] - 128.0f;
     float V_val = d_V[i] - 128.0f;
-
     float R = Y_val + 1.402f * V_val;
     float G = Y_val - 0.344136f * U_val - 0.714136f * V_val;
     float B = Y_val + 1.772f * U_val;
-
     R = fmaxf(0.0f, fminf(R, 255.0f));
     G = fmaxf(0.0f, fminf(G, 255.0f));
     B = fmaxf(0.0f, fminf(B, 255.0f));
-
     int idx = i * channels;
     d_image[idx]     = static_cast<unsigned char>(R + 0.5f);
     d_image[idx + 1] = static_cast<unsigned char>(G + 0.5f);
@@ -121,11 +115,10 @@ int main(int argc, char** argv) {
         printf("Usage: %s <input_image> <output_image>\n", argv[0]);
         return -1;
     }
-
     const char* input_path = argv[1];
     const char* output_path = argv[2];
 
-    // Load image
+    // Load image using STB
     int width, height, channels;
     unsigned char* h_image = stbi_load(input_path, &width, &height, &channels, 3);
     if (!h_image) {
@@ -138,11 +131,9 @@ int main(int argc, char** argv) {
     const int total_pixels = width * height;
 
     // Allocate device memory
-    unsigned char *d_image;
-    unsigned char *d_Y;
+    unsigned char *d_image, *d_Y, *d_LUT;
     float *d_U, *d_V;
     int *d_histogram, *d_cdf, *d_min_cdf;
-    unsigned char *d_LUT;
 
     checkCudaErrors(cudaMalloc((void**)&d_image, image_size));
     checkCudaErrors(cudaMalloc((void**)&d_Y, total_pixels * sizeof(unsigned char)));
@@ -155,9 +146,12 @@ int main(int argc, char** argv) {
 
     // Initialize histogram to zero
     checkCudaErrors(cudaMemset(d_histogram, 0, 256 * sizeof(int)));
-
     // Copy input image to device
     checkCudaErrors(cudaMemcpy(d_image, h_image, image_size, cudaMemcpyHostToDevice));
+
+    // Warm-up: launch a dummy kernel to reduce first-run overhead.
+    dummy_kernel<<<1, 1>>>();
+    checkCudaErrors(cudaDeviceSynchronize());
 
     // CUDA events for timing
     cudaEvent_t start, stop;
@@ -165,59 +159,56 @@ int main(int argc, char** argv) {
     checkCudaErrors(cudaEventCreate(&stop));
     checkCudaErrors(cudaEventRecord(start));
 
-    // Launch RGB to YUV kernel
+    // Set up grid and block dimensions
     dim3 block(256);
     dim3 grid((total_pixels + block.x - 1) / block.x);
+
+    // Convert from RGB to YUV
     rgb_to_yuv_kernel<<<grid, block>>>(d_image, d_Y, d_U, d_V, width, height, channels);
-    checkCudaErrors(cudaGetLastError());
+    checkCudaErrors(cudaDeviceSynchronize());
 
-    // Compute histogram
+    // Compute histogram of Y channel
     compute_histogram_kernel<<<grid, block>>>(d_Y, d_histogram, total_pixels);
-    checkCudaErrors(cudaGetLastError());
+    checkCudaErrors(cudaDeviceSynchronize());
 
-    // Compute CDF
+    // Compute the cumulative distribution function (CDF)
     compute_cdf_kernel<<<1, 1>>>(d_cdf, d_histogram);
-    checkCudaErrors(cudaGetLastError());
+    checkCudaErrors(cudaDeviceSynchronize());
 
-    // Find min CDF
+    // Find the minimum non-zero CDF value
     find_min_cdf_kernel<<<1, 1>>>(d_cdf, d_min_cdf);
-    checkCudaErrors(cudaGetLastError());
+    checkCudaErrors(cudaDeviceSynchronize());
 
-    // Compute LUT
+    // Compute the lookup table (LUT)
     compute_LUT_kernel<<<1, 256>>>(d_LUT, d_cdf, d_min_cdf, total_pixels);
-    checkCudaErrors(cudaGetLastError());
+    checkCudaErrors(cudaDeviceSynchronize());
 
-    // Apply LUT to Y channel
+    // Apply the LUT to the Y channel
     apply_LUT_kernel<<<grid, block>>>(d_Y, d_LUT, total_pixels);
-    checkCudaErrors(cudaGetLastError());
+    checkCudaErrors(cudaDeviceSynchronize());
 
-    // Convert YUV back to RGB
+    // Convert from YUV back to RGB
     yuv_to_rgb_kernel<<<grid, block>>>(d_image, d_Y, d_U, d_V, width, height, channels);
-    checkCudaErrors(cudaGetLastError());
+    checkCudaErrors(cudaDeviceSynchronize());
 
-    // Copy result back to host
+    // Copy the processed image from device to host
     checkCudaErrors(cudaMemcpy(h_image, d_image, image_size, cudaMemcpyDeviceToHost));
-
     checkCudaErrors(cudaEventRecord(stop));
     checkCudaErrors(cudaEventSynchronize(stop));
 
-    // Calculate and print time
+    // Calculate and print the elapsed time (ms)
     float milliseconds = 0;
     checkCudaErrors(cudaEventElapsedTime(&milliseconds, start, stop));
     printf("DIMS %d %d TIME %.3f\n", width, height, milliseconds);
-    
-    // Write output image to parallel_results/outputs
-    char output_path_full[512];
-    snprintf(output_path_full, sizeof(output_path_full), "parallel_results/outputs/%s", output_path);
 
-    // Write output image
+    // Write the equalized image to file
     const char* ext = strrchr(output_path, '.');
     if (!ext) {
         fprintf(stderr, "Output file must have an extension\n");
         stbi_image_free(h_image);
         return -1;
     }
-    ext++;
+    ext++;  // skip the dot
 
     int success;
     if (strcasecmp(ext, "png") == 0) {
@@ -230,7 +221,6 @@ int main(int argc, char** argv) {
         fprintf(stderr, "Unsupported format: %s\n", ext);
         success = 0;
     }
-
     if (!success) {
         fprintf(stderr, "Error writing image to %s\n", output_path);
     }
