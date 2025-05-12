@@ -1,0 +1,1 @@
+512x512 Default 12.461697  (Successful runs: 1)

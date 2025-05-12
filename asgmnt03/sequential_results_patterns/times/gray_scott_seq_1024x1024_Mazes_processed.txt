@@ -1,0 +1,1 @@
+1024x1024 Mazes 56.407082  (Successful runs: 1)

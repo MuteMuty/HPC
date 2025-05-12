@@ -1,0 +1,1 @@
+512x512 Mazes 0.060871  (Successful runs: 1)
