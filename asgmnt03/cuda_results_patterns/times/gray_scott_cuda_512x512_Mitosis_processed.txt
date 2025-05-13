@@ -1,1 +1,1 @@
-512x512 Mitosis 0.060600  (Successful runs: 1)
+512x512 Mitosis 0.060447  (Successful runs: 1)

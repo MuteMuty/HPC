@@ -1,0 +1,401 @@
+Loading module: CUDA
+Compiling Sequential Code...
+Compiling CUDA Code for sm_70...
+nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+Compilation successful.
+Created directories
+====================================
+GRID SIZE: 256x256
+====================================
+------------------------------------
+PATTERN: Default (F=0.060, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=256, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 3.647609
+        Checking for PGM: './gray_scott_seq_N256_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N256_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_seq Pattern Default for 256x256. Results: sequential_results_patterns/times/gray_scott_seq_256x256_Default_processed.txt
+    Running gray_scott_cuda: N=256, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.028373
+        Checking for PGM: './gray_scott_cuda_N256_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N256_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Default for 256x256. Results: cuda_results_patterns/times/gray_scott_cuda_256x256_Default_processed.txt
+------------------------------------
+PATTERN: Flower (F=0.055, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=256, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 3.782890
+        Checking for PGM: './gray_scott_seq_N256_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N256_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_seq Pattern Flower for 256x256. Results: sequential_results_patterns/times/gray_scott_seq_256x256_Flower_processed.txt
+    Running gray_scott_cuda: N=256, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.027995
+        Checking for PGM: './gray_scott_cuda_N256_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N256_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Flower for 256x256. Results: cuda_results_patterns/times/gray_scott_cuda_256x256_Flower_processed.txt
+------------------------------------
+PATTERN: Mazes (F=0.029, k=0.057)
+------------------------------------
+    Running gray_scott_seq: N=256, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 3.667081
+        Checking for PGM: './gray_scott_seq_N256_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N256_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mazes for 256x256. Results: sequential_results_patterns/times/gray_scott_seq_256x256_Mazes_processed.txt
+    Running gray_scott_cuda: N=256, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 0.028208
+        Checking for PGM: './gray_scott_cuda_N256_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N256_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mazes for 256x256. Results: cuda_results_patterns/times/gray_scott_cuda_256x256_Mazes_processed.txt
+------------------------------------
+PATTERN: Mitosis (F=0.028, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=256, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 3.784506
+        Checking for PGM: './gray_scott_seq_N256_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N256_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mitosis for 256x256. Results: sequential_results_patterns/times/gray_scott_seq_256x256_Mitosis_processed.txt
+    Running gray_scott_cuda: N=256, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.028208
+        Checking for PGM: './gray_scott_cuda_N256_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N256_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mitosis for 256x256. Results: cuda_results_patterns/times/gray_scott_cuda_256x256_Mitosis_processed.txt
+------------------------------------
+PATTERN: Solitons (F=0.030, k=0.060)
+------------------------------------
+    Running gray_scott_seq: N=256, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 3.566370
+        Checking for PGM: './gray_scott_seq_N256_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N256_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_seq Pattern Solitons for 256x256. Results: sequential_results_patterns/times/gray_scott_seq_256x256_Solitons_processed.txt
+    Running gray_scott_cuda: N=256, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 0.028023
+        Checking for PGM: './gray_scott_cuda_N256_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N256_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Solitons for 256x256. Results: cuda_results_patterns/times/gray_scott_cuda_256x256_Solitons_processed.txt
+====================================
+GRID SIZE: 512x512
+====================================
+------------------------------------
+PATTERN: Default (F=0.060, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=512, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 12.378937
+        Checking for PGM: './gray_scott_seq_N512_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N512_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_seq Pattern Default for 512x512. Results: sequential_results_patterns/times/gray_scott_seq_512x512_Default_processed.txt
+    Running gray_scott_cuda: N=512, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.061053
+        Checking for PGM: './gray_scott_cuda_N512_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N512_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Default for 512x512. Results: cuda_results_patterns/times/gray_scott_cuda_512x512_Default_processed.txt
+------------------------------------
+PATTERN: Flower (F=0.055, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=512, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 12.502165
+        Checking for PGM: './gray_scott_seq_N512_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N512_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_seq Pattern Flower for 512x512. Results: sequential_results_patterns/times/gray_scott_seq_512x512_Flower_processed.txt
+    Running gray_scott_cuda: N=512, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.061230
+        Checking for PGM: './gray_scott_cuda_N512_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N512_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Flower for 512x512. Results: cuda_results_patterns/times/gray_scott_cuda_512x512_Flower_processed.txt
+------------------------------------
+PATTERN: Mazes (F=0.029, k=0.057)
+------------------------------------
+    Running gray_scott_seq: N=512, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 12.512724
+        Checking for PGM: './gray_scott_seq_N512_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N512_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mazes for 512x512. Results: sequential_results_patterns/times/gray_scott_seq_512x512_Mazes_processed.txt
+    Running gray_scott_cuda: N=512, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 0.060626
+        Checking for PGM: './gray_scott_cuda_N512_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N512_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mazes for 512x512. Results: cuda_results_patterns/times/gray_scott_cuda_512x512_Mazes_processed.txt
+------------------------------------
+PATTERN: Mitosis (F=0.028, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=512, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 12.520499
+        Checking for PGM: './gray_scott_seq_N512_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N512_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mitosis for 512x512. Results: sequential_results_patterns/times/gray_scott_seq_512x512_Mitosis_processed.txt
+    Running gray_scott_cuda: N=512, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.060447
+        Checking for PGM: './gray_scott_cuda_N512_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N512_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mitosis for 512x512. Results: cuda_results_patterns/times/gray_scott_cuda_512x512_Mitosis_processed.txt
+------------------------------------
+PATTERN: Solitons (F=0.030, k=0.060)
+------------------------------------
+    Running gray_scott_seq: N=512, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 12.134836
+        Checking for PGM: './gray_scott_seq_N512_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N512_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_seq Pattern Solitons for 512x512. Results: sequential_results_patterns/times/gray_scott_seq_512x512_Solitons_processed.txt
+    Running gray_scott_cuda: N=512, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 0.060854
+        Checking for PGM: './gray_scott_cuda_N512_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N512_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Solitons for 512x512. Results: cuda_results_patterns/times/gray_scott_cuda_512x512_Solitons_processed.txt
+====================================
+GRID SIZE: 1024x1024
+====================================
+------------------------------------
+PATTERN: Default (F=0.060, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=1024, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 65.049469
+        Checking for PGM: './gray_scott_seq_N1024_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N1024_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_seq Pattern Default for 1024x1024. Results: sequential_results_patterns/times/gray_scott_seq_1024x1024_Default_processed.txt
+    Running gray_scott_cuda: N=1024, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.271344
+        Checking for PGM: './gray_scott_cuda_N1024_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N1024_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Default for 1024x1024. Results: cuda_results_patterns/times/gray_scott_cuda_1024x1024_Default_processed.txt
+------------------------------------
+PATTERN: Flower (F=0.055, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=1024, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 64.581568
+        Checking for PGM: './gray_scott_seq_N1024_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N1024_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_seq Pattern Flower for 1024x1024. Results: sequential_results_patterns/times/gray_scott_seq_1024x1024_Flower_processed.txt
+    Running gray_scott_cuda: N=1024, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.272431
+        Checking for PGM: './gray_scott_cuda_N1024_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N1024_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Flower for 1024x1024. Results: cuda_results_patterns/times/gray_scott_cuda_1024x1024_Flower_processed.txt
+------------------------------------
+PATTERN: Mazes (F=0.029, k=0.057)
+------------------------------------
+    Running gray_scott_seq: N=1024, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 56.389242
+        Checking for PGM: './gray_scott_seq_N1024_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N1024_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mazes for 1024x1024. Results: sequential_results_patterns/times/gray_scott_seq_1024x1024_Mazes_processed.txt
+    Running gray_scott_cuda: N=1024, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 0.275673
+        Checking for PGM: './gray_scott_cuda_N1024_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N1024_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mazes for 1024x1024. Results: cuda_results_patterns/times/gray_scott_cuda_1024x1024_Mazes_processed.txt
+------------------------------------
+PATTERN: Mitosis (F=0.028, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=1024, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 59.554780
+        Checking for PGM: './gray_scott_seq_N1024_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N1024_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mitosis for 1024x1024. Results: sequential_results_patterns/times/gray_scott_seq_1024x1024_Mitosis_processed.txt
+    Running gray_scott_cuda: N=1024, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.267635
+        Checking for PGM: './gray_scott_cuda_N1024_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N1024_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mitosis for 1024x1024. Results: cuda_results_patterns/times/gray_scott_cuda_1024x1024_Mitosis_processed.txt
+------------------------------------
+PATTERN: Solitons (F=0.030, k=0.060)
+------------------------------------
+    Running gray_scott_seq: N=1024, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 58.911753
+        Checking for PGM: './gray_scott_seq_N1024_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N1024_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_seq Pattern Solitons for 1024x1024. Results: sequential_results_patterns/times/gray_scott_seq_1024x1024_Solitons_processed.txt
+    Running gray_scott_cuda: N=1024, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 0.263720
+        Checking for PGM: './gray_scott_cuda_N1024_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N1024_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Solitons for 1024x1024. Results: cuda_results_patterns/times/gray_scott_cuda_1024x1024_Solitons_processed.txt
+====================================
+GRID SIZE: 2048x2048
+====================================
+------------------------------------
+PATTERN: Default (F=0.060, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=2048, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 258.329445
+        Checking for PGM: './gray_scott_seq_N2048_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N2048_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_seq Pattern Default for 2048x2048. Results: sequential_results_patterns/times/gray_scott_seq_2048x2048_Default_processed.txt
+    Running gray_scott_cuda: N=2048, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.981630
+        Checking for PGM: './gray_scott_cuda_N2048_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N2048_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Default for 2048x2048. Results: cuda_results_patterns/times/gray_scott_cuda_2048x2048_Default_processed.txt
+------------------------------------
+PATTERN: Flower (F=0.055, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=2048, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 260.657189
+        Checking for PGM: './gray_scott_seq_N2048_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N2048_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_seq Pattern Flower for 2048x2048. Results: sequential_results_patterns/times/gray_scott_seq_2048x2048_Flower_processed.txt
+    Running gray_scott_cuda: N=2048, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.974000
+        Checking for PGM: './gray_scott_cuda_N2048_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N2048_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Flower for 2048x2048. Results: cuda_results_patterns/times/gray_scott_cuda_2048x2048_Flower_processed.txt
+------------------------------------
+PATTERN: Mazes (F=0.029, k=0.057)
+------------------------------------
+    Running gray_scott_seq: N=2048, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 265.661125
+        Checking for PGM: './gray_scott_seq_N2048_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N2048_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mazes for 2048x2048. Results: sequential_results_patterns/times/gray_scott_seq_2048x2048_Mazes_processed.txt
+    Running gray_scott_cuda: N=2048, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 0.977373
+        Checking for PGM: './gray_scott_cuda_N2048_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N2048_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mazes for 2048x2048. Results: cuda_results_patterns/times/gray_scott_cuda_2048x2048_Mazes_processed.txt
+------------------------------------
+PATTERN: Mitosis (F=0.028, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=2048, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 269.349158
+        Checking for PGM: './gray_scott_seq_N2048_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N2048_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mitosis for 2048x2048. Results: sequential_results_patterns/times/gray_scott_seq_2048x2048_Mitosis_processed.txt
+    Running gray_scott_cuda: N=2048, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 0.984130
+        Checking for PGM: './gray_scott_cuda_N2048_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N2048_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mitosis for 2048x2048. Results: cuda_results_patterns/times/gray_scott_cuda_2048x2048_Mitosis_processed.txt
+------------------------------------
+PATTERN: Solitons (F=0.030, k=0.060)
+------------------------------------
+    Running gray_scott_seq: N=2048, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 261.864229
+        Checking for PGM: './gray_scott_seq_N2048_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N2048_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_seq Pattern Solitons for 2048x2048. Results: sequential_results_patterns/times/gray_scott_seq_2048x2048_Solitons_processed.txt
+    Running gray_scott_cuda: N=2048, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 0.985990
+        Checking for PGM: './gray_scott_cuda_N2048_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N2048_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Solitons for 2048x2048. Results: cuda_results_patterns/times/gray_scott_cuda_2048x2048_Solitons_processed.txt
+====================================
+GRID SIZE: 4096x4096
+====================================
+------------------------------------
+PATTERN: Default (F=0.060, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=4096, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 867.519999
+        Checking for PGM: './gray_scott_seq_N4096_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N4096_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_seq Pattern Default for 4096x4096. Results: sequential_results_patterns/times/gray_scott_seq_4096x4096_Default_processed.txt
+    Running gray_scott_cuda: N=4096, Steps=5000, Pattern=Default (F=0.060, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 3.921669
+        Checking for PGM: './gray_scott_cuda_N4096_steps5000_F0.060_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N4096_steps5000_F0.060_k0.062_Default_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Default for 4096x4096. Results: cuda_results_patterns/times/gray_scott_cuda_4096x4096_Default_processed.txt
+------------------------------------
+PATTERN: Flower (F=0.055, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=4096, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 868.465959
+        Checking for PGM: './gray_scott_seq_N4096_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N4096_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_seq Pattern Flower for 4096x4096. Results: sequential_results_patterns/times/gray_scott_seq_4096x4096_Flower_processed.txt
+    Running gray_scott_cuda: N=4096, Steps=5000, Pattern=Flower (F=0.055, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 3.929231
+        Checking for PGM: './gray_scott_cuda_N4096_steps5000_F0.055_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N4096_steps5000_F0.055_k0.062_Flower_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Flower for 4096x4096. Results: cuda_results_patterns/times/gray_scott_cuda_4096x4096_Flower_processed.txt
+------------------------------------
+PATTERN: Mazes (F=0.029, k=0.057)
+------------------------------------
+    Running gray_scott_seq: N=4096, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 872.451641
+        Checking for PGM: './gray_scott_seq_N4096_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N4096_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mazes for 4096x4096. Results: sequential_results_patterns/times/gray_scott_seq_4096x4096_Mazes_processed.txt
+    Running gray_scott_cuda: N=4096, Steps=5000, Pattern=Mazes (F=0.029, k=0.057)
+      Run 1/1...
+        Run 1 successful. Time: 3.919794
+        Checking for PGM: './gray_scott_cuda_N4096_steps5000_F0.029_k0.057_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N4096_steps5000_F0.029_k0.057_Mazes_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mazes for 4096x4096. Results: cuda_results_patterns/times/gray_scott_cuda_4096x4096_Mazes_processed.txt
+------------------------------------
+PATTERN: Mitosis (F=0.028, k=0.062)
+------------------------------------
+    Running gray_scott_seq: N=4096, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 896.482343
+        Checking for PGM: './gray_scott_seq_N4096_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N4096_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_seq Pattern Mitosis for 4096x4096. Results: sequential_results_patterns/times/gray_scott_seq_4096x4096_Mitosis_processed.txt
+    Running gray_scott_cuda: N=4096, Steps=5000, Pattern=Mitosis (F=0.028, k=0.062)
+      Run 1/1...
+        Run 1 successful. Time: 3.909089
+        Checking for PGM: './gray_scott_cuda_N4096_steps5000_F0.028_k0.062_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N4096_steps5000_F0.028_k0.062_Mitosis_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Mitosis for 4096x4096. Results: cuda_results_patterns/times/gray_scott_cuda_4096x4096_Mitosis_processed.txt
+------------------------------------
+PATTERN: Solitons (F=0.030, k=0.060)
+------------------------------------
+    Running gray_scott_seq: N=4096, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 876.302782
+        Checking for PGM: './gray_scott_seq_N4096_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'sequential_results_patterns/outputs/gray_scott_seq_N4096_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_seq Pattern Solitons for 4096x4096. Results: sequential_results_patterns/times/gray_scott_seq_4096x4096_Solitons_processed.txt
+    Running gray_scott_cuda: N=4096, Steps=5000, Pattern=Solitons (F=0.030, k=0.060)
+      Run 1/1...
+        Run 1 successful. Time: 3.917858
+        Checking for PGM: './gray_scott_cuda_N4096_steps5000_F0.030_k0.060_V.pgm'
+        Found. Moving to 'cuda_results_patterns/outputs/gray_scott_cuda_N4096_steps5000_F0.030_k0.060_Solitons_V_run1.pgm'
+    Finished gray_scott_cuda Pattern Solitons for 4096x4096. Results: cuda_results_patterns/times/gray_scott_cuda_4096x4096_Solitons_processed.txt
+====================================
+All Benchmarking Completed.
+Sequential Results: sequential_results_patterns
+CUDA Results: cuda_results_patterns
+====================================

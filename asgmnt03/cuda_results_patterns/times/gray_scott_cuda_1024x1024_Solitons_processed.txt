@@ -1,1 +1,1 @@
-1024x1024 Solitons 0.263730  (Successful runs: 1)
+1024x1024 Solitons 0.263720  (Successful runs: 1)

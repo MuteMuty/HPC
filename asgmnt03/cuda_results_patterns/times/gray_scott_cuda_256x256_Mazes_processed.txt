@@ -1,1 +1,1 @@
-256x256 Mazes 0.028041  (Successful runs: 1)
+256x256 Mazes 0.028208  (Successful runs: 1)

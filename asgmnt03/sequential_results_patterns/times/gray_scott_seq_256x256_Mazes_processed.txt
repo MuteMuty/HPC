@@ -1,1 +1,1 @@
-256x256 Mazes 3.790774  (Successful runs: 1)
+256x256 Mazes 3.667081  (Successful runs: 1)

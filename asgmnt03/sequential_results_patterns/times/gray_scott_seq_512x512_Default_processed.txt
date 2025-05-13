@@ -1,1 +1,1 @@
-512x512 Default 12.461697  (Successful runs: 1)
+512x512 Default 12.378937  (Successful runs: 1)

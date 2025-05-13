@@ -1,0 +1,5 @@
+nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+INFO: Running CUDA Gray-Scott N=4096, Steps=10000, F=0.0600, k=0.0620
+DIMS 4096x4096 TIME 7.784698
+INFO: Saved V grid to gray_scott_cuda_N4096_steps10000_F0.060_k0.062_V.pgm
+INFO: CUDA simulation finished successfully.

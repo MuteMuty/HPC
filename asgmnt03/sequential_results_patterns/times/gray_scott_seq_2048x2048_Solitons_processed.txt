@@ -1,0 +1,1 @@
+2048x2048 Solitons 261.864229  (Successful runs: 1)

@@ -1,1 +1,1 @@
-512x512 Solitons 12.406157  (Successful runs: 1)
+512x512 Solitons 12.134836  (Successful runs: 1)

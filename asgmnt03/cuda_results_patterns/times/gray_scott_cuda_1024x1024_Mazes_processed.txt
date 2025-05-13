@@ -1,1 +1,1 @@
-1024x1024 Mazes 0.264375  (Successful runs: 1)
+1024x1024 Mazes 0.275673  (Successful runs: 1)

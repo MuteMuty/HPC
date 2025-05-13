@@ -16,7 +16,7 @@ SEQ_EXECUTABLE="gray_scott_seq"
 CUDA_EXECUTABLE="gray_scott_cuda"
 SEQ_RESULTS_DIR="sequential_results_patterns"
 CUDA_RESULTS_DIR="cuda_results_patterns"
-GRID_SIZES=(256 512 1024) # Reduced list for quicker testing, expand later
+GRID_SIZES=(256 512 1024 2048 4096) # Reduced list for quicker testing, expand later
 SIMULATION_STEPS=5000     # Keep steps high enough for patterns to emerge
 NUM_RUNS=1                # Reduce runs per setting for quicker testing
 

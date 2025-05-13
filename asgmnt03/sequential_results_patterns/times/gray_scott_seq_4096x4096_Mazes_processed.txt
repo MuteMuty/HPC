@@ -1,0 +1,1 @@
+4096x4096 Mazes 872.451641  (Successful runs: 1)
