@@ -1,0 +1,28 @@
+Job ID: 57810330, Array Job ID: 57810250, Array Task ID: 18
+Running on host: wn140.arnes.si
+Allocated nodes: wn140
+Number of tasks allocated by SLURM for this job step: 64
+Number of CPUs on node: 64
+Working directory: /d/hpc/home/ep6791/hpc/asgmnt04
+Start time: Sat May 17 05:18:34 PM CEST 2025
+Loading MPI module...
+MPI module loaded.
+Compiling MPI Code: gray_scott_mpi.c -> gray_scott_mpi
+/cvmfs/sling.si/modules/el7/software/OpenMPI/4.1.6-GCC-13.2.0/bin/mpicc
+Compilation successful.
+-rwxr-xr-x 1 ep6791 ep6791 22080 May 17 17:18 gray_scott_mpi
+----------------------------------------------------
+Running Configuration:
+  Grid Size (N_GLOBAL): 2048x2048
+  Cores for mpirun (-np): 1
+  SLURM_NTASKS available to job: 64
+  Simulation Steps: 5000
+  F: 0.060, k: 0.062
+  Number of Runs: 1
+----------------------------------------------------
+  Run 1/1 for N=2048, Cores=1...
+    Run 1 successful. Time: 239.251550 s
+----------------------------------------------------
+SUMMARY: N_GLOBAL=2048 CORES=1 AVG_TIME=239.252 s (from 1 successful runs)
+----------------------------------------------------
+End time: Sat May 17 05:22:41 PM CEST 2025
